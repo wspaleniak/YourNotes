@@ -11,15 +11,14 @@ class EditViewController: UIViewController {
 
     static let identifier = String(describing: EditViewController.self)
     
-    var note: Note?
-    weak var delegate: ListNotesDelegate?
+    var note: Note!
     
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.text = note?.text
+        textView.text = note.text
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,12 +33,10 @@ class EditViewController: UIViewController {
     private func updateNote() {
         note?.lastUpdated = Date()
         CoreDataManager.shared.save()
-        delegate?.refreshNotes()
     }
     
     private func deleteNote() {
-        delegate?.deleteNote(with: note?.id ?? UUID())
-        CoreDataManager.shared.deleteNote(note ?? Note())
+        CoreDataManager.shared.deleteNote(note)
     }
 }
 
@@ -47,10 +44,10 @@ class EditViewController: UIViewController {
 extension EditViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        note?.text = textView.text
-        if note?.title.isEmpty ?? true {
+        if textView.text.isEmpty {
             deleteNote()
-        } else {
+        } else if textView.text != note.text {
+            note.text = textView.text
             updateNote()
         }
     }

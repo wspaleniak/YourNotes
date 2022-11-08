@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--YourNotes-->
+        <!--Your Notes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ListNotesViewController" id="BYZ-38-t0r" customClass="ListNotesViewController" customModule="YourNotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,7 +126,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="YourNotes" id="Nhk-21-Kjv"/>
+                    <navigationItem key="navigationItem" title="Your Notes" id="Nhk-21-Kjv"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="notesCountLbl" destination="UsW-xe-zCB" id="qBK-ew-GzT"/>
