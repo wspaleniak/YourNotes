@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		922FB94D2919270E00AE15D5 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FB94C2919270E00AE15D5 /* Date+Extension.swift */; };
 		922FB94F291948B300AE15D5 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FB94E291948B300AE15D5 /* EditViewController.swift */; };
+		922FB9522919712100AE15D5 /* YourNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 922FB9502919712100AE15D5 /* YourNotes.xcdatamodeld */; };
+		922FB955291974CA00AE15D5 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FB953291974CA00AE15D5 /* Note+CoreDataClass.swift */; };
+		922FB956291974CA00AE15D5 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FB954291974CA00AE15D5 /* Note+CoreDataProperties.swift */; };
+		922FB95829197A8800AE15D5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922FB95729197A8800AE15D5 /* CoreDataManager.swift */; };
 		92D8FD7E2918478400A92CF3 /* ListNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8FD7D2918478400A92CF3 /* ListNotesViewController.swift */; };
 		92D8FD80291847CF00A92CF3 /* ListNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8FD7F291847CF00A92CF3 /* ListNoteTableViewCell.swift */; };
-		92D8FD82291849D800A92CF3 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D8FD81291849D800A92CF3 /* Note.swift */; };
 		92E18F0129181E9D0085FA2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E18F0029181E9D0085FA2F /* AppDelegate.swift */; };
 		92E18F0329181E9D0085FA2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E18F0229181E9D0085FA2F /* SceneDelegate.swift */; };
 		92E18F0829181E9D0085FA2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E18F0629181E9D0085FA2F /* Main.storyboard */; };
@@ -22,9 +25,12 @@
 /* Begin PBXFileReference section */
 		922FB94C2919270E00AE15D5 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		922FB94E291948B300AE15D5 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		922FB9512919712100AE15D5 /* YourNotes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YourNotes.xcdatamodel; sourceTree = "<group>"; };
+		922FB953291974CA00AE15D5 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		922FB954291974CA00AE15D5 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		922FB95729197A8800AE15D5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		92D8FD7D2918478400A92CF3 /* ListNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNotesViewController.swift; sourceTree = "<group>"; };
 		92D8FD7F291847CF00A92CF3 /* ListNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNoteTableViewCell.swift; sourceTree = "<group>"; };
-		92D8FD81291849D800A92CF3 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		92E18EFD29181E9D0085FA2F /* YourNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E18F0029181E9D0085FA2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E18F0229181E9D0085FA2F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +88,10 @@
 		92D8FD7C2918461000A92CF3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				92D8FD81291849D800A92CF3 /* Note.swift */,
+				922FB953291974CA00AE15D5 /* Note+CoreDataClass.swift */,
+				922FB954291974CA00AE15D5 /* Note+CoreDataProperties.swift */,
+				922FB9502919712100AE15D5 /* YourNotes.xcdatamodeld */,
+				922FB95729197A8800AE15D5 /* CoreDataManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,13 +199,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92D8FD82291849D800A92CF3 /* Note.swift in Sources */,
 				92E18F0129181E9D0085FA2F /* AppDelegate.swift in Sources */,
 				92D8FD7E2918478400A92CF3 /* ListNotesViewController.swift in Sources */,
 				92E18F0329181E9D0085FA2F /* SceneDelegate.swift in Sources */,
 				92D8FD80291847CF00A92CF3 /* ListNoteTableViewCell.swift in Sources */,
 				922FB94D2919270E00AE15D5 /* Date+Extension.swift in Sources */,
+				922FB955291974CA00AE15D5 /* Note+CoreDataClass.swift in Sources */,
+				922FB9522919712100AE15D5 /* YourNotes.xcdatamodeld in Sources */,
 				922FB94F291948B300AE15D5 /* EditViewController.swift in Sources */,
+				922FB95829197A8800AE15D5 /* CoreDataManager.swift in Sources */,
+				922FB956291974CA00AE15D5 /* Note+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +432,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		922FB9502919712100AE15D5 /* YourNotes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				922FB9512919712100AE15D5 /* YourNotes.xcdatamodel */,
+			);
+			currentVersion = 922FB9512919712100AE15D5 /* YourNotes.xcdatamodel */;
+			path = YourNotes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 92E18EF529181E9D0085FA2F /* Project object */;
 }

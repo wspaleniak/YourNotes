@@ -32,6 +32,7 @@ class ListNotesViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()        // delete line in NavigationBar when scrolling TableView
         tableView.contentInset = .init(top: 0, left: 0, bottom: 30, right: 0)
         configureSearchBar()
+        fetchNotesFromStorage()
     }
     
     private func indexForNote(id: UUID, in list: [Note]) -> IndexPath {
@@ -59,9 +60,7 @@ class ListNotesViewController: UIViewController {
     
     // MARK: Methods to implement
     private func createNote() -> Note {
-        let note = Note()
-        
-        // TODO: save note in database
+        let note = CoreDataManager.shared.createNote()
         
         // Update table
         allNotes.insert(note, at: 0)
@@ -70,21 +69,18 @@ class ListNotesViewController: UIViewController {
     }
     
     private func fetchNotesFromStorage() {
-        // TODO: get all saved notes
-        print("Fetching all notes")
+        allNotes = CoreDataManager.shared.fetchNotes()
+        tableView.reloadData()
     }
     
     private func deleteNoteFromStorage(_ note: Note) {
-        // TODO: delete note
-        print("Deleting note")
-        
-        // Update the list
         deleteNote(with: note.id)
+        CoreDataManager.shared.deleteNote(note)
     }
     
     private func searchNotesFromStorage(_ text: String) {
-        // TODO: get all notes that have this text
-        print("Searching notes")
+        allNotes = CoreDataManager.shared.fetchNotes(filter: text)
+        tableView.reloadData()
     }
 }
 
@@ -125,6 +121,7 @@ extension ListNotesViewController: UISearchControllerDelegate, UISearchBarDelega
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search("")
+        fetchNotesFromStorage()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

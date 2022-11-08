@@ -16,6 +16,6 @@ class ListNoteTableViewCell: UITableViewCell {
     
     func setup(note: Note) {
         titleLbl.text = note.title
-        descriptionLbl.text = note.description
+        descriptionLbl.text = note.desc
     }
 }
